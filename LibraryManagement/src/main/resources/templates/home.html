@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Controller Example</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        .row {
+          display: flex;
+        }
+
+        /* Create two equal columns that sits next to each other */
+        .column {
+          flex: 50%;
+          padding: 10px;
+          height: 300px; /* Should be removed. Only for demonstration */
+        }
+    </style>
+</head>
+<body>
+
+<h4>Hi Quarto - Java Boot - React - Git - Scrum - Class</h4>
+
+<p th:text=" ${session.todayDate} "  >  </p>
+
+<div class="row">
+    <div class="column">
+        <p>sessionId:
+            <span th:text=" ${session.sessionId} "  >  </span></p>
+        <p>sessionCount:
+            <span th:text=" ${session.sessionCount} "  >  </span></p>
+        <p>requestCount:
+            <span th:text=" ${session.requestCount} "  >  </span></p>
+        </br></br>
+        <p>Librarian:
+            <span th:text=" ${session.librarianId} "  >  </span></p>
+        <p>User:
+            <span th:text=" ${session.userId} "  >  </span></p>
+    </div>
+    <div class="column">
+        <p>httpServletRequest headers:</p>
+        <p> <span th:text=" ${session.httpServletRequestHeaders} "  >  </span></p>
+    </div>
+</div>
+
+</br></br>
+
+<div th:if="${session.librarianId}">
+
+    <p>
+        <a th:href="@{/user/users}"> Go to user domain</a>
+    </p>
+
+    <p>
+        <a th:href="@{/librarian/librarians}"> Go to librarian domain</a>
+    </p>
+
+    <p>
+        <a th:href="@{/borrow/borrows}"> Go to borrow domain</a>
+    </p>
+</div>
+
+<p>
+    <a th:href="@{/book/books}"> Go to book domain</a>
+</p>
+
+
+
+</body>
+</html>
