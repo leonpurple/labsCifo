@@ -11,8 +11,19 @@ import lombok.NoArgsConstructor;
 
 public class Airplane {
 
+    private String airplaneId;
     private String brand;
     private String model;
     private Fuselage fuselage;
 
+
+    @Override
+    public String toString() {
+        return "Airplane{" +
+                "airplaneId=" + airplaneId +
+                ", brand= '" + brand + '\'' +
+                ", model= " + model +
+                ", fuselage= " + fuselage + '\'' +
+                '}';
+    }
 }

@@ -5,12 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@NoAllConstructor
 @AllArgsConstructor
 public class Pilot extends Person {
-    int Licence;
 
-    public Pilot(String john, String doe, String s, int i){
+    private String PilotId;
+    private int Licence;
+    private double salary:
 
-    }
+
 
 }
